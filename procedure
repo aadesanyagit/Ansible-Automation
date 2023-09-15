@@ -1,0 +1,181 @@
+[madesanya@localhost Ansible-Automation]$ ls
+inventory  README.md
+[madesanya@localhost Ansible-Automation]$ git diff
+[madesanya@localhost Ansible-Automation]$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+[madesanya@localhost Ansible-Automation]$ touch procedure
+[madesanya@localhost Ansible-Automation]$ hitsory
+bash: hitsory: command not found...
+[madesanya@localhost Ansible-Automation]$ history
+    1  sudo su
+    2  ssh-keygen -t ed25519 -C "Ansible"
+    3  cd home/.ssh
+    4  cd home
+    5  cat /home/madesanya/.ssh/Ansible.pub
+    6  git clone git@github.com:aadesanyagit/Ansible-Automation.git
+    7  ssh-copy-id -i /home/madesanya/.ssh/Ansible.pub 192.168.221.132
+    8  ssh '192.168.221.132'
+    9  ssh-copy-id -i /home/madesanya/.ssh/Ansible.pub 10.106.24.80
+   10  ssh-copy-id -i /home/madesanya/.ssh/Ansible.pub 10.106.24.81
+   11  git status 
+   12  git init
+   13  cd Ansible-Automation/
+   14  git init
+   15  git status
+   16  ssh '10.106.24.81'
+   17  clear
+   18  eval $(ssh-agent)
+   19  ssh-add
+   20  history
+   21  eval $(ssh-agen)
+   22  eval $(ssh-agent)
+   23  ssh-add
+   24  alias ssha='eval $(ssh-agent) && ssh-add'
+   25  ssha
+   26  vi .bashrc
+   27  nano .bashrc
+   28  vi .bashrc
+   29  ssha
+   30  vi .bashrc
+   31  eval $(ssh-agent)
+   32  ssh-add
+   33  alias ssha
+   34  ssh 192.168.221.132
+   35  clear
+   36  ssh 192.168.221.132
+   37  ssh -i 192.168.221
+   38  ssh -i ~/.ssh/ansible 192.168.221.132 
+   39  cd /home
+   40  ls
+   41  cd madesanya/'
+   42  cd madesanya/'
+   43  cd madesanya/
+   44  ls
+   45  cat ~/.ssh
+   46  cat /home/.ssh/Ansible
+   47  cd ome/madesanya/.ssh
+   48  history
+   49  cat /home/madesanya/.ssh/Ansible.pub
+   50  cd /home/madesanya/.ssh
+   51  cd~
+   52  cd ~
+   53  ssh -i ~/madesanya/.ssh/ansible 192.168.221.132
+   54  ssh -i /home/madesanya/.ssh/Ansible 192.168.221.132
+   55  eval $(ssh-agent)
+   56  ssh-add
+   57  ps aux | grep 33536
+   58  ssh-add
+   59  ssh-add -i /home/madesanya/.ssh/Ansible
+   60  eval $(ssh-agent)
+   61  ps aux | grep 33847
+   62  ssh-add /home/madesanya/.ssh/Ansible
+   63  ssh 192.168.221.132
+   64  ls
+   65  cd ..
+   66  cd /home/madesanya/.ssh
+   67  cd ..
+   68  ssh -i  /home/madesanya/.ssh/Ansible 192.168.221.132
+   69  eval $(ssh-agent)
+   70  ssh-add  /home/madesanya/.ssh/Ansible
+   71  ssh 192.168.221.132
+   72  nano .bashrc
+   73  alias ssha
+   74  nano .bashrc
+   75  alias ssha
+   76  cd /home/madesanya/.ssh
+   77  cd ..
+   78  nano .bashrc
+   79  ssha
+   80  ssh 192.168.221.132
+   81  ssha
+   82  ssh -i /home/madesanya/.ssh/Ansible 192.168.221.132
+   83  ssha
+   84  nano .bashrc
+   85  ssha
+   86  ssh-add /home/madesanya/.ssh/Ansible 
+   87  nano .bashrc
+   88  ssha
+   89  alias ssha
+   90  nano .bashrc
+   91  alias ssha
+   92  cd ~/
+   93  alias ssha
+   94  ssha
+   95  ssh 192.168.221.132
+   96  cd /Documents/
+   97  cd /home/madesanya/
+   98  ls
+   99  cd /home/madesanya/Ansible-Automation/
+  100  can ~/.gitConfig
+  101  ls
+  102  locate gitconfig
+  103  git status 
+  104  git config --global --add safe.directory /home/madesanya/Ansible-Automation
+  105  git status
+  106  alisa ssha
+  107  alias ssha
+  108  ssha
+  109  ssh 10.168.221.132
+  110  ssh 10.106.24.80
+  111  clear
+  112  hisotry
+  113  history
+  114  ls
+  115  tough SSH Procedures
+  116  touch SSH Procedure
+  117  sudo touch SSH Procedure
+  118  ls
+  119  rm Procedure 
+  120  ls
+  121  rm Procedure 
+  122  sudo rm Procedure 
+  123  ls
+  124  sudo rm SSH
+  125  sudo nano procedures
+  126  ls
+  127  pwd
+  128  ssha
+  129  git status
+  130  rm RHELkey.pub
+  131  sudo rm RHELkey.pub
+  132  git status
+  133  git add procedures 
+  134  sudo su
+  135  git commit -m "Procedure to add sshkey to server" 
+  136  sudo git commit -m "Procedure to add sshkey to server" 
+  137  sudo git push origin/main
+  138  sudo git push
+  139  ssha
+  140  sudo git push
+  141  cd ~
+  142  ls
+  143  rm Ansible-Automation/
+  144  rm -r Ansible-Automation/
+  145  ls -l
+  146  mount | grep /home/madesanya/Ansible-Automation
+  147  ls -l
+  148  rm Ansible-Automation/
+  149  rm -r Ansible-Automation/
+  150  sudo rm -r Ansible-Automation/
+  151  ls
+  152  cd Documents
+  153  ls
+  154  rm -r Ansible-Automation/
+  155  sudo rm -r Ansible-Automation/
+  156  ls
+  157  clear
+  158  git clone git@github.com:aadesanyagit/Ansible-Automation.git
+  159  ls
+  160  cd Documents/
+  161  ls
+  162  cd Ansible-Automation/
+  163  ls
+  164  git diff
+  165  git status
+  166  touch procedure
+  167  hitsory
+  168  history
+[madesanya@localhost Ansible-Automation]$ 
