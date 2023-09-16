@@ -1,0 +1,104 @@
+
+# This Ansible cheat sheet covers many common Ansible tasks and commands. Remember to replace placeholders like <hostname>, <playbook.yml>, <module_name>, <module_parameters>, <package_name>, <service_name>, and <condition> with actual values for your use case. Ansible is a powerful automation tool, and this cheat sheet should help you get started with it.
+Basic Ansible Commands:
+
+Ping a Host:
+
+ansible <hostname> -m ping
+Run a Playbook:
+
+ansible-playbook <playbook.yml>
+Ad-Hoc Command (Execute a single task):
+
+ansible <hostname> -a "<command>"
+Inventory Management:
+
+Specify Inventory File:
+
+ansible-playbook -i <inventory_file> <playbook.yml>
+List Hosts in Inventory:
+
+ansible-inventory --list
+Playbook Structure:
+
+Define Hosts and Tasks in Playbook:
+---
+- hosts: <hostname>
+  tasks:
+    - name: Task Name
+      <module_name>:
+        <module_parameters>
+Modules:
+
+Copy a File to Remote Host:
+
+- name: Copy File
+  copy:
+    src: /path/to/local/file
+    dest: /path/to/remote/file
+Install Packages:
+
+- name: Install Package
+  apt:  # or yum, dnf for other package managers
+    name: <package_name>
+    state: present
+Restart a Service:
+
+- name: Restart Service
+  service:
+    name: <service_name>
+    state: restarted
+Create a Directory:
+
+- name: Create Directory
+  file:
+    path: /path/to/directory
+    state: directory
+Variables and Facts:
+
+Set a Variable:
+
+- name: Set Variable
+  set_fact:
+    my_var: "value"
+Use Facts (Host Information):
+
+- name: Print Hostname
+  debug:
+    var: ansible_hostname
+Conditionals and Loops:
+
+Conditional Execution:
+
+- name: Conditional Task
+  command: <command>
+  when: <condition>
+Looping Over Items:
+
+- name: Loop Task
+  debug:
+    msg: "Item is {{ item }}"
+  with_items:
+    - item1
+    - item2
+Handlers:
+
+Define a Handler:
+
+handlers:
+  - name: Restart Service
+    service:
+      name: <service_name>
+      state: restarted
+Notify a Handler:
+
+- name: Update Configuration
+  template:
+    src: my_config.j2
+    dest: /etc/my_config.conf
+  notify:
+    - Restart Service
+Tags:
+
+Run Specific Tasks with Tags:
+ansible-playbook -i inventory.ini -t <tag_name> playbook.yml
