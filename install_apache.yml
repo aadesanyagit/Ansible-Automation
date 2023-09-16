@@ -1,0 +1,9 @@
+---
+
+- hosts: 192.168.221.132
+  become: true
+  tasks:
+
+  - name: install apache2 package
+    dnf:
+     name: apache2
