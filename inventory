@@ -1,9 +1,5 @@
 [web_servers]
 192.168.221.132
 
-[db_server]
+[db_servers]
 192.168.221.133
-
-[pdc_test_Server]
-10.106.24.80
-10.106.24.81
