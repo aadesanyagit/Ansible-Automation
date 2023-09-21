@@ -270,3 +270,4 @@
   270  git commit -m "updated inventory file"
   271  git push 
   272  git status
+  273  ansible-playbook --tags httpd --ask-become-pass site.yml
