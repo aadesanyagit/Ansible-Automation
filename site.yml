@@ -4,12 +4,14 @@
   pre_tasks:
     
     - name: Install updates (Ubuntu)
+      tags: always
       apt:
         upgrade: dist
         update_cache: yes
       when: ansible_distribution == "Ubuntu"
 
     - name: Install updates (RedHat)
+      tags: always
       dnf:
         name: "*"
         state: latest
@@ -20,6 +22,7 @@
   tasks:
 
     - name: Install Apache and PHP for Ubuntu Servers
+      tags: apache,apache2,ubuntu
       apt:
         name:
           - apache2
@@ -28,6 +31,7 @@
       when: ansible_distribution == "Ubuntu"
 
     - name: Install PHP and Apache for RedHat Server 
+      tags: apache,redhat,httpd
       dnf:
         name:
           - httpd 
