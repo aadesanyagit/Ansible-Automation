@@ -1,11 +1,11 @@
 ---
 
-- hosts: 192.168.221.132
+- hosts: all
   become: true
   tasks:
   
   - name: Update Repository Index
-    dnf:
+    package:
       update_cache: yes
     when: ansible_distribution in ["RedHat", "CentOS"]
 
