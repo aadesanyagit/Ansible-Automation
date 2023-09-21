@@ -1,16 +1,4 @@
-[madesanya@localhost Ansible-Automation]$ ls
-inventory  README.md
-[madesanya@localhost Ansible-Automation]$ git diff
-[madesanya@localhost Ansible-Automation]$ git status
-On branch main
-Your branch is up to date with 'origin/main'.
-
-nothing to commit, working tree clean
-[madesanya@localhost Ansible-Automation]$ touch procedure
-[madesanya@localhost Ansible-Automation]$ hitsory
-bash: hitsory: command not found...
-[madesanya@localhost Ansible-Automation]$ history
-    1  sudo su
+ 1  sudo su
     2  ssh-keygen -t ed25519 -C "Ansible"
     3  cd home/.ssh
     4  cd home
@@ -178,4 +166,107 @@ bash: hitsory: command not found...
   166  touch procedure
   167  hitsory
   168  history
-[madesanya@localhost Ansible-Automation]$ 
+  169  git add procedure 
+  170  git -m "Procedure to create and add ssh to servers"
+  171  git commit -m "Procedure to create and add ssh to servers"
+  172  git config --global user.name "michael.adesanya@cgi.com"
+  173  git config --global user.email "michael.adesanya@cgi.com"
+  174  git config --global user.name "michael adesanya"
+  175  git commit -m "Procedure to create and add ssh to servers"
+  176  git push 
+  177  alias ssha
+  178  clear
+  179  ansible all --key-file /home/madesanya/.ssh/Ansible -i inventory -m ping 
+  180  touch ansible.cfg
+  181  ls etc/ansible
+  182  ls /etc/ansible
+  183  cat /etc/ansible
+  184  cat /etc/ansible/ansible.cfg 
+  185  ansible all -m ping
+  186  ansible all --list-hosts
+  187  ansible all -m gather_facts
+  188  ansible all -m gather_facts --limit 192.168.221.132
+  189  git add
+  190  git add ansible.cfg 
+  191  git commit -m "first version of ansible.cfg"
+  192  git push orign master
+  193  git push origin master
+  194  git push 
+  195  ansible all -m yum -a update_cache=true
+  196  ansible all -m yum -a update_cache=true --become --ask-become-pass
+  197  ansible all -m yum -a update_cache=true --become --ask-become-pass -limit 190.168.221.132
+  198  ansible all -m yum -a update_cache=true -limit 190.168.221.132 --become --ask-become-pass 
+  199  ansible all -m yum -a update_cache=true -limit 192.168.221.132 --become --ask-become-pass 
+  200  ansible all -m yum -a update_cache=true -limit 192.168.221.132 --become --ask-become-pass clear
+  201  clear
+  202  ansible all -m yum -a update_cache=true --limit 192.168.221.132 --become --ask-become-pass 
+  203   ansible all -m dnf -a name=vim-nox" --become --ask-become-pass 
+  204   ansible all -m dnf -a name=tmux --limit 192.168.221.132 --become --ask-become-pass 
+  205   ansible all -m dnf -a "name=tmux state=latest" --limit 192.168.221.132 --become --ask-become-pass 
+  206  touch Ansible-Commands
+  207  git add
+  208  git add Ansible-Commands 
+  209  git commit -m "Basic Ansible commmands"
+  210  git psuh 
+  211  git push origin master
+  212  git push 
+  213  git status
+  214  git pull origin 
+  215  ansible-playbook --ask-become-pass install-yml
+  216  ansible-playbook --ask-become-pass install-apache.yml
+  217  ansible-playbook --ask-become-pass install_apache.yml
+  218  git add install_apache.yml 
+  219  git -commit -m "Example yml playbook to install Apache 2.4, Maria DB and update Nginx"
+  220  git commit -m "Example yml playbook to install Apache 2.4, Maria DB and update Nginx"
+  221  git push origin master
+  222  git push 
+  223  git pull 
+  224  ansible-playbook --ask-become-pass install_apache.yml
+  225  git pull
+  226  cat /etc/os-release
+  227  sudo hostnamectl set-hostname AnsibleServer
+  228  cat /etc/os-release
+  229  cat /etc/hosts
+  230  vi /etc/hosts
+  231  sudo nano /etc/hosts
+  232  sudo systemctl restartsystemd-AnsibleServer
+  233  sudo systemctl restart systemd-AnsibleServer
+  234  hostnamectl
+  235  which dnf
+  236  restart
+  237  shutdown -r
+  238  ssha
+  239  git pull
+  240  git add inventory
+  241  git add install_apache_multiple_OS
+  242  git add install_apache_multiple-OS
+  243  git commit -m "undate and added playbook for apache installation on multiple assets "
+  244  git push
+  245  ls
+  246  git status
+  247  git push
+  248  git pull
+  249  cp install_apache_multiple-OS.yml site.yml
+  250  cp install_apache_multiple-OS site.yml
+  251  ansible-playbook --ask-become-pass installsite.yml
+  252  ansible-playbook --ask-become-pass install site.yml
+  253  ansible-playbook --ask-become-pass site.yml
+  254  clear
+  255  ansible-playbook --ask-become-pass site.yml
+  256  clear
+  257  ansible-playbook --ask-become-pass site.yml
+  258  clear
+  259  ansible-playbook --ask-become-pass site.yml
+  260  clear
+  261  ansible-playbook --ask-become-pass site.yml
+  262  git add
+  263  git add install_apache_multiple-OS.yml
+  264  git add site.yml
+  265  git commit -m "Site and MultiOS  playbook add"
+  266  git push
+  267  git status
+  268  git rm install_apache_multiple-OS
+  269  git add inventory 
+  270  git commit -m "updated inventory file"
+  271  git push 
+  272  git status
