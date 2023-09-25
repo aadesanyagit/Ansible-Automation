@@ -39,6 +39,14 @@
         state: latest
       when: ansible_distribution == "RedHat"
 
+    - name: start httpd (RedHat)
+      tags: apache,redhat,httpd
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+      when: ansible_distribution == "RedHat"
+
     - name: Copy default html file for site
       tags: apache,apache2,httpd
       copy:
@@ -47,6 +55,31 @@
         owner: root
         group: root
         mode: 0644
+
+- hosts: all
+  become: true
+  tasks:       
+
+    - name: Create User mofe
+      tags: always
+      user:
+        name: mofe
+        groups: root
+
+    - name: Set authorized key
+      ansible.posix.authorized_key:
+        user: mofe
+        key: "{{ lookup('file', '/home/madesanya/.ssh/Ansible.pub') }}"
+        state: present
+
+    - name: add sudoer file for mofe
+      tags: always
+      ansible.builtin.copy:
+        src: /home/madesanya/Documents/Ansible-Automation/files/sudoer_mofe
+        dest: /etc/sudoers.d/mofe
+        owner: root
+        groups: root
+        mode: 0440
 
 - hosts: workstation
   become: true
