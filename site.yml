@@ -47,14 +47,14 @@
         enabled: yes
       when: ansible_distribution == "RedHat"
 
-    - name: Copy default html file for site
-      tags: apache,apache2,httpd
-      copy:
-        src: default_site.html
-        dest: /var/www/html/index.html
-        owner: root
-        group: root
-        mode: 0644
+    # - name: Copy default html file for site
+    #   tags: apache,apache2,httpd
+    #   copy:
+    #     src: default_site.html
+    #     dest: /var/www/html/index.html
+    #     owner: root
+    #     group: root
+    #     mode: 0644
 
 - hosts: all
   become: true
@@ -74,11 +74,11 @@
 
     - name: add sudoer file for mofe
       tags: always
-      ansible.builtin.copy:
+      copy:
         src: /home/madesanya/Documents/Ansible-Automation/files/sudoer_mofe
         dest: /etc/sudoers.d/mofe
         owner: root
-        groups: root
+        group: root
         mode: 0440
 
 - hosts: workstation
