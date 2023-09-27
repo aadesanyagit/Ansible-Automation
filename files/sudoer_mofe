@@ -1,1 +1,3 @@
-mofe ALL=(All) NOPASSWD: ALL
+# User privilege specification
+
+mofe    ALL=NOPASSWD: ALL

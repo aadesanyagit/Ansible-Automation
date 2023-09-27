@@ -1,0 +1,43 @@
+---
+- hosts: all
+  become: true
+  pre_tasks:
+    
+    - name: Install updates (Ubuntu)
+      tags: always
+      apt:
+        upgrade: dist
+        update_cache: yes
+      when: ansible_distribution == "Ubuntu"
+
+    - name: Install updates (RedHat)
+      tags: always
+      dnf:
+        name: "*"
+        state: latest
+      when: ansible_distribution == "RedHat"
+
+- hosts: all
+  become: true
+  tasks:       
+
+    - name: Create User mofe
+      tags: always
+      user:
+        name: mofe
+        groups: root
+
+    - name: Set authorized key
+      ansible.posix.authorized_key:
+        user: mofe
+        key: "{{ lookup('file', '/home/madesanya/.ssh/Ansible.pub') }}"
+        state: present
+
+    - name: add sudoer file for mofe
+      tags: always
+      copy:
+        src: /home/madesanya/Documents/Ansible-Automation/files/sudoer_mofe
+        dest: /etc/sudoers.d/mofe
+        owner: root
+        group: root
+        mode: 0440
