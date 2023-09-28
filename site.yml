@@ -17,62 +17,29 @@
       changed_when: false
       when: ansible_distribution == "RedHat"
 
-- hosts: web_servers
-  become: true
-  tasks:
-
-    - name: Install Apache and PHP for Ubuntu Servers
-      tags: apache,apache2,ubuntu
-      apt:
-        name:
-          - apache2
-          - libapache2-mod-php
-        state: latest
-      when: ansible_distribution == "Ubuntu"
-
-    - name: Install PHP and Apache for RedHat Server 
-      tags: apache,redhat,httpd
-      dnf:
-        name:
-          - httpd 
-          - php
-        state: latest
-      when: ansible_distribution == "RedHat"
-
-    - name: start httpd (RedHat)
-      tags: apache,redhat,httpd
-      service:
-        name: httpd
-        state: started
-        enabled: yes
-      when: ansible_distribution == "RedHat"
-
 - hosts: all
   become: true
-  tasks:       
-
-    - name: Set authorized key
-      ansible.posix.authorized_key:
-        user: mofe
-        key: "{{ lookup('file', '/home/madesanya/.ssh/Ansible.pub') }}"
-        state: present
-
-- hosts: workstation
+  roles:
+    - base
+   
+- hosts: workstations
   become: true
-  tasks:
-    
-    - name: Install unzip
-      package:
-        name: unzip
-    
-    - name: Install terraform on workstation
-      tags: terraform
-      unarchive:
-        src: https://releases.hashicorp.com/terraform/1.5.7/terraform_1.5.7_linux_amd64.zip
-        dest: /usr/local/bin
-        remote_src: yes
-        mode: 0775
-        owner: root
-        group: root
+  roles:
+    - workstations
+ 
+- hosts: web_servers
+  become: true
+  roles:
+    - web_servers
+ 
+- hosts: db_servers
+  become: true
+  roles:
+    - db_servers
+ 
+# - hosts: files_servers
+#   become: true
+#   roles:
+#     - files_servers
       
 
