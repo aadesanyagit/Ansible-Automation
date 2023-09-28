@@ -1,0 +1,4 @@
+- name: add ssh and authorization key for mofe
+  ansible.posix.authorized_key:
+    user: mofe
+    key: "{{ lookup('file', '/home/madesanya/.ssh/Ansible.pub') }}"

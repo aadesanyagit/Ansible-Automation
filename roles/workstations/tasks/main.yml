@@ -1,0 +1,14 @@
+
+- name: Install unzip
+  package:
+    name: unzip
+
+- name: Install terraform on workstations
+  tags: terraform
+  unarchive:
+    src: https://releases.hashicorp.com/terraform/1.5.7/terraform_1.5.7_linux_amd64.zip
+    dest: /usr/local/bin
+    remote_src: yes
+    mode: 0775
+    owner: root
+    group: root
