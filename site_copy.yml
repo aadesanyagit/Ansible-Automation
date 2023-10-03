@@ -17,6 +17,17 @@
         state: latest
       when: ansible_distribution == "RedHat"
 
+    - name: "Onboard Linux Servers to Azure Arc-enabled servers with Public endpoint connectivity"
+      hosts: all
+      vars:
+        azure:
+          service_principal_id: 'd2aabe97-cd1c-4b67-878c-9e28bcde9fb7'
+          service_principal_secret: 'rOc8Q~pm-r1ZSzBkXPrcTLEthw7aJqDeZYARWaS0'
+          resource_group: 'Arc-Deployment-WorkSpace-RG'
+          tenant_id: '73822aac-4c17-4084-be61-b136b7d6de26'
+          subscription_id: 'd81b8ec3-8529-485c-984e-34182260d492'
+          location: 'eastus'
+
 - hosts: web_servers
   become: true
   tasks:
